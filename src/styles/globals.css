@@ -24,3 +24,9 @@ a {
     background: black;
   }
 }
+
+@tailwindbase;
+
+@tailwindcomponents;
+
+@tailwindutilities;
