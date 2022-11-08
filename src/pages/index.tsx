@@ -7,9 +7,17 @@ export default function Home() {
   const clientes = [
     new Cliente('Ana', 34, '1'),
     new Cliente('Bia', 45, '2'),
-    new Cliente('Ana', 23, '3'),
+    new Cliente('Carlos', 23, '3'),
     new Cliente('Pedro', 54, '4'),
   ]
+
+  function clienteSelecionado(cliente: Cliente) {
+    console.log(cliente.nome)
+  }
+
+  function clienteExcluido(cliente: Cliente) {
+    console.log(`Excluir...${cliente.nome}`)
+  }
 
   return (
     <div className={`
@@ -18,7 +26,9 @@ export default function Home() {
       text-white
     `}>
       <Layout titulo="Cadastro Simples">
-       <Tabela clientes={clientes}></Tabela>
+       <Tabela clientes={clientes} 
+       clienteSelecionado={clienteSelecionado}
+       clienteExcluido={clienteExcluido}/>
       </Layout>
     </div>
   )
